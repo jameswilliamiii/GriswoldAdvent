@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20121127055619) do
 
   create_table "daily_quotes", :force => true do |t|
-    t.date     "show_date"
+    t.integer  "show_date"
     t.text     "quote"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
