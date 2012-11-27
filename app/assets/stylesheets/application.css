@@ -14,17 +14,21 @@
  */
 
 body {
-	background-image:url(nlcv.png);
+	background-image:url(nlcv.jpg);
 	background-position: 50% 0; 
 	background-repeat:no-repeat; 
-	display:block;
+	background-size: cover;
+	background-color: black;
+}
+
+.container {
+	vertical-align: middle;
 }
 
 span {
 	background: rgba(54, 25, 25, .5);
 	font-family: 'Abel', sans-serif;
 	color: white;
-
 }
 
 .quotes {
@@ -40,4 +44,20 @@ span {
 .effect{
 text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
 letter-spacing: 0 }
+
+.summary {
+	margin-top: 60px;
+	font-family: 'Abel', sans-serif;
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.summary-row {
+	margin-bottom: 20px;
+}
+
+a.inactive {
+	font-color: red;
+}
 
