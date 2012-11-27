@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+	<span class='date effect'>
+	  <%= Date.today %>
+	</span>
+	<br/>
+	<span class='quotes'>
+	  <%= @daily_quote.quote %>
+	</span>
+</div>
 
-<span class='date effect'>
-  <%= Date.today %>
-</span>
-<br/>
-<span class='quotes'>
-  <%= @daily_quote.quote %>
-</span>
+
