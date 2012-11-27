@@ -6,9 +6,9 @@
 	</div>
 	<div class='span9'>
 		<span class= 'past-dates pull-right'>
-			<strong>Previous quotes: </strong>
-			<% @quotes.each do |quote| %> | 
-				<%= link_to quote.show_date, '#' %>
+			<strong>Previous quotes: </strong>|
+			<% @quotes.each do |quote| %> 
+				<%= link_to quote.show_date, '#' %> |
 			<% end %>
 		</span>
 	</div>
