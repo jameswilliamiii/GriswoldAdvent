@@ -1,17 +1,10 @@
 class DailyQuotesController < ApplicationController
 
-  def index
-    @daily_quotes = DailyQuote.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @daily_quotes }
-    end
-  end
-
   def show
-    todays_date = Date.today.day
-    @daily_quote = DailyQuote.find(params[:id])
+    # todays_date = Date.today.day
+    #This is just for development purposes
+    todays_date = rand(1..25)
+    @daily_quote = DailyQuote.find_by_show_date todays_date
 
     respond_to do |format|
       format.html # show.html.erb

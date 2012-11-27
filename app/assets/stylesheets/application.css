@@ -8,6 +8,35 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap_and_overrides
  *= require_self
  *= require_tree .
  */
+
+body {
+	background-image:url(nlcv.png);
+	background-position: 50% 0; 
+	background-repeat:no-repeat; 
+	display:block;
+}
+
+span {
+	background: rgba(54, 25, 25, .5);
+	font-family: 'Abel', sans-serif;
+	color: white;
+}
+
+.quotes {
+	font-size: 45px;
+	line-height: 65px;
+}
+
+.date {
+	font-size: 55px;
+	line-height: 85px;
+}
+
+.effect{
+text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
+letter-spacing: 0 }
+
