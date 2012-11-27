@@ -42,16 +42,18 @@ span {
 }
 
 .past-dates {
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 30px;
 	background: none;
-	margin-top: 22px;
-	margin-bottom: 22px;
 }
 
 .effect{
 	text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
 	letter-spacing: 0;
+}
+
+.spacer {
+	height: 70px;
 }
 
 
