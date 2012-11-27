@@ -4,7 +4,8 @@ class DailyQuotesController < ApplicationController
     # todays_date = Date.today.day
     #This is just for development purposes
     todays_date = Random.new.rand(1..25).to_i
-    @daily_quote = DailyQuote.find_by_show_date todays_date
+    @quotes = DailyQuote.where( :show_date => 1..25)
+    @daily_quote = @quotes.find { |f| f[:show_date] == todays_date }
 
     respond_to do |format|
       format.html # show.html.erb

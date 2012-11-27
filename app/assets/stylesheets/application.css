@@ -41,23 +41,18 @@ span {
 	line-height: 85px;
 }
 
+.past-dates {
+	font-size: 18px;
+	line-height: 30px;
+	background: none;
+	margin-top: 22px;
+	margin-bottom: 22px;
+}
+
 .effect{
-text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
-letter-spacing: 0 }
-
-.summary {
-	margin-top: 60px;
-	font-family: 'Abel', sans-serif;
-	color: white;
-	font-size: 25px;
-	font-weight: bold;
+	text-shadow: -5px 5px 5px rgba(0,0,0, 0.3);
+	letter-spacing: 0;
 }
 
-.summary-row {
-	margin-bottom: 20px;
-}
 
-a.inactive {
-	font-color: red;
-}
 
