@@ -1,0 +1,25 @@
+<%= form_for(@daily_quote) do |f| %>
+  <% if @daily_quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@daily_quote.errors.count, "error") %> prohibited this daily_quote from being saved:</h2>
+
+      <ul>
+      <% @daily_quote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :show_date %><br />
+    <%= f.date_select :show_date %>
+  </div>
+  <div class="field">
+    <%= f.label :quote %><br />
+    <%= f.text_area :quote %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

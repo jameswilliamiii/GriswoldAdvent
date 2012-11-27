@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Show date:</b>
+  <%= @daily_quote.show_date %>
+</p>
+
+<p>
+  <b>Quote:</b>
+  <%= @daily_quote.quote %>
+</p>
+
+
+<%= link_to 'Edit', edit_daily_quote_path(@daily_quote) %> |
+<%= link_to 'Back', daily_quotes_path %>

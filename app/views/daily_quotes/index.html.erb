@@ -1,0 +1,25 @@
+<h1>Listing daily_quotes</h1>
+
+<table>
+  <tr>
+    <th>Show date</th>
+    <th>Quote</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @daily_quotes.each do |daily_quote| %>
+  <tr>
+    <td><%= daily_quote.show_date %></td>
+    <td><%= daily_quote.quote %></td>
+    <td><%= link_to 'Show', daily_quote %></td>
+    <td><%= link_to 'Edit', edit_daily_quote_path(daily_quote) %></td>
+    <td><%= link_to 'Destroy', daily_quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Daily quote', new_daily_quote_path %>
