@@ -3,7 +3,7 @@ class DailyQuotesController < ApplicationController
   def show
     # todays_date = Date.today.day
     #This is just for development purposes
-    todays_date = rand(1..25)
+    todays_date = rand(1..25).to_i
     @daily_quote = DailyQuote.find_by_show_date todays_date
 
     respond_to do |format|
