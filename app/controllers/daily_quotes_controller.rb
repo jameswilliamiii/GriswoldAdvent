@@ -1,6 +1,5 @@
 class DailyQuotesController < ApplicationController
-  # GET /daily_quotes
-  # GET /daily_quotes.json
+
   def index
     @daily_quotes = DailyQuote.all
 
@@ -10,9 +9,8 @@ class DailyQuotesController < ApplicationController
     end
   end
 
-  # GET /daily_quotes/1
-  # GET /daily_quotes/1.json
   def show
+    todays_date = Date.today.day
     @daily_quote = DailyQuote.find(params[:id])
 
     respond_to do |format|
@@ -21,8 +19,6 @@ class DailyQuotesController < ApplicationController
     end
   end
 
-  # GET /daily_quotes/new
-  # GET /daily_quotes/new.json
   def new
     @daily_quote = DailyQuote.new
 
@@ -32,13 +28,10 @@ class DailyQuotesController < ApplicationController
     end
   end
 
-  # GET /daily_quotes/1/edit
   def edit
     @daily_quote = DailyQuote.find(params[:id])
   end
 
-  # POST /daily_quotes
-  # POST /daily_quotes.json
   def create
     @daily_quote = DailyQuote.new(params[:daily_quote])
 
@@ -53,8 +46,6 @@ class DailyQuotesController < ApplicationController
     end
   end
 
-  # PUT /daily_quotes/1
-  # PUT /daily_quotes/1.json
   def update
     @daily_quote = DailyQuote.find(params[:id])
 
@@ -69,8 +60,6 @@ class DailyQuotesController < ApplicationController
     end
   end
 
-  # DELETE /daily_quotes/1
-  # DELETE /daily_quotes/1.json
   def destroy
     @daily_quote = DailyQuote.find(params[:id])
     @daily_quote.destroy
