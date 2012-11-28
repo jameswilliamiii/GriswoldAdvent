@@ -10,16 +10,15 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :show_date %><br />
-    <%= f.date_select :show_date %>
+		<%= f.label :show_date %>
+		<%= f.text_field :show_date, :class => 'span1' %>
+		<br/><br/>
+    <%= f.label :quote %>
+    <%= f.text_area :quote, :class => 'span5' %>
   </div>
-  <div class="field">
-    <%= f.label :quote %><br />
-    <%= f.text_area :quote %>
-  </div>
+	<br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'btn' %>
   </div>
 <% end %>

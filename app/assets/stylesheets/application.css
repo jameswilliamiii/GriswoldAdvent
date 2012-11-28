@@ -14,10 +14,9 @@
  */
 
 body {
-	background-image:url(nlcv.jpg);
-	background-position: 50% 0; 
-	background-repeat:no-repeat; 
-	background-size: cover;
+	background-image:url(nlcv.jpg); 
+	background-repeat: no-repeat; 
+	background-size: 110%;
 	background-color: black;
 }
 
@@ -55,7 +54,12 @@ span {
 }
 
 .spacer {
-	height: 70px;
+	height: 30px;
+}
+
+label {
+	font-size: 20px;
+	color: white;
 }
 
 /* Sticky footer styles -------------------------------------------------- */
@@ -72,13 +76,13 @@ body {
   height: auto !important;
   height: 100%;
   /* Negative indent footer by it's height */
-  margin: 0 auto -60px;
+  margin: 0 auto -80px;
 }
 
 /* Set the fixed height of the footer here */
 #push,
 #footer {
-  height: 60px;
+  height: 80px;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
@@ -89,6 +93,10 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
+.credit {
+	margin-top: 10px;
 }
 
 
