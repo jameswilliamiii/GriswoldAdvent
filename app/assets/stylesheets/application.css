@@ -66,11 +66,18 @@ span {
 
 .spacer {
 	height: 30px;
+	margin-top: 20px;
 }
 
-label {
-	font-size: 20px;
-	color: white;
+ul.social {
+	margin: 0;
+}
+
+li.social {
+	list-style: none;
+	display: inline;
+	float: left;
+	margin-right: 10px;
 }
 
 /* Sticky footer styles -------------------------------------------------- */

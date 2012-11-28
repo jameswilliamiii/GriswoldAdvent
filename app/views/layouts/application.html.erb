@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>Griswold Advent <%= 'Dec' if Date.today.month == 12 %> <%= Date.today.day if Date.today.month == 12 %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -9,6 +9,15 @@
 	<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=467304199979958";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	
 	<div id="wrap">
 		<div class='container'>
 			<%= yield %>
