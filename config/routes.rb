@@ -2,6 +2,7 @@ GriswoldAdvent::Application.routes.draw do
   
   root :to => 'daily_quotes#index'
   resources :daily_quotes, :except => [ :new ]
+  get 'coming_soon' => 'daily_quotes#coming_soon', :as => :coming_soon
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

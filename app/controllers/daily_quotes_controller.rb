@@ -1,25 +1,30 @@
 class DailyQuotesController < ApplicationController
 
+  before_filter :check_date, :except => :coming_soon
   around_filter :catch_not_found
   
   def index
-    # todays_date = Date.today.day
-    #This is just for development purposes
-    todays_date = Random.new.rand(1..25).to_i
-    @quotes = DailyQuote.where( :show_date => 1..25)
-    @daily_quote = @quotes.where(:show_date => todays_date).first
+    todays_date = Date.today.day
+    if todays_date > 25
+      @quotes = DailyQuote.where( :show_date => 1..25)
+      @daily_quote = @quotes.where(:show_date => 25).first
+    else
+      @quotes = DailyQuote.where( :show_date => 1..todays_date)
+      @daily_quote = @quotes.where(:show_date => todays_date).first
+    end
   end
   
   def show
-    # todays_date = Date.today.day
-    #This is just for development purposes
-    todays_date = Random.new.rand(1..25).to_i
-    @quotes = DailyQuote.where( :show_date => 1..25)
+    todays_date = Date.today.day
+    if todays_date > 25
+      @quotes = DailyQuote.where( :show_date => 1..25)
+    else
+      @quotes = DailyQuote.where( :show_date => 1..todays_date)
+    end
     @daily_quote = @quotes.where(:id => params[:id]).first
-    if @daily_quote.blank?
+    unless @daily_quote.present?
       redirect_to root_path
     end
-      
   end
 
   def edit
@@ -43,4 +48,19 @@ class DailyQuotesController < ApplicationController
     @daily_quote.destroy
     redirect_to daily_quotes_url
   end
+  
+  def coming_soon
+
+  end
+  
+  private
+  
+  def check_date
+    month = Date.today.month
+    day = Date.today.day
+    unless month == 12 && (1..28).include?(day)
+      redirect_to coming_soon_path
+    end
+  end
+  
 end
