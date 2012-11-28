@@ -9,8 +9,27 @@
 	<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class='container'>
-		<%= yield %>
+	<div id="wrap">
+		<div class='container'>
+			<%= yield %>
+			<div class='row-fluid'>
+				<div class='span12'>
+					<span class= 'past-dates'>
+						<strong>Previous quotes: <br/></strong>|
+						<% @quotes.each do |quote| %> 
+							<%= link_to quote.show_date, daily_quote_path(quote) %> |
+						<% end %>
+					</span>
+					<br/>
+				</div>
+			</div>
+		</div>
+		<div id="push"></div>
+	</div>
+	<div id="footer">
+	  <div class="container">
+	    <p class="muted credit">Built by James Stubblefield. Follow me on Twitter <a href="http://twitter.com/jameswilliamiii">@jameswilliamiii</a>.</p>
+	  </div>
 	</div>
 </body>
 </html>

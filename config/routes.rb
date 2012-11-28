@@ -1,6 +1,6 @@
 GriswoldAdvent::Application.routes.draw do
   
-  root :to => 'daily_quotes#show'
+  root :to => 'daily_quotes#index'
   resources :daily_quotes
 
   # The priority is based upon order of creation:
