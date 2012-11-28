@@ -13,12 +13,22 @@
  *= require_tree .
  */
 
-body {
-	background-image:url(nlcv.jpg);
-	background-position: auto 100%; 
-	background-repeat:no-repeat; 
-	background-size: cover;
-	background-color: black;
+
+@media (min-width: 768px) {
+	body {
+		background-image:url(nlcv.jpg);
+		background-position: auto 100%; 
+		background-repeat:no-repeat; 
+		background-size: cover;
+		background-color: black;
+		height: 100%;
+	}
+}
+
+@media (max-width: 767px) {
+	body {
+		background-color: black;;
+	}
 }
 
 .container {
@@ -26,7 +36,7 @@ body {
 }
 
 span {
-	background: rgba(54, 25, 25, .5);
+	background: rgba(105, 93, 93, .5);
 	font-family: 'Abel', sans-serif;
 	color: white;
 }
