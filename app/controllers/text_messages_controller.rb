@@ -7,7 +7,7 @@ class TextMessagesController < ApplicationController
       client.account.sms.messages.create(
         from: ENV['TWILO_FROM'],
         to: text_message.phone_number,
-        body: "Thanks for signing up. To verify your account, please reply HELLO to this message."
+        body: "Thanks for signing up for Griswold Advent daily texts through Dec 25. To verify your account, please reply CLARK to this message."
         )
         redirect_to root_path, notice: 'Thank you! You will receive an SMS shortly with verification instructions.'
     else

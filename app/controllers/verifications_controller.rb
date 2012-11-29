@@ -3,7 +3,6 @@ class VerificationsController < ApplicationController
   before_filter :get_user
   
   def create
-    logger.info "*** #{@phone_number.phone_number} ***"
     @phone_number.verified = true
     @phone_number.save
     head :ok
