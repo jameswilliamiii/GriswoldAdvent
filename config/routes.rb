@@ -5,6 +5,7 @@ GriswoldAdvent::Application.routes.draw do
   get 'coming_soon' => 'daily_quotes#coming_soon', :as => :coming_soon
   
   post 'text_messages' => 'text_messages#create'
+  resource  :verifications
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
