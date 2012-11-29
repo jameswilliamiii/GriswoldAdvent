@@ -11,6 +11,7 @@ class VerificationsController < ApplicationController
     logger.info "*** #{cleaned_number} ***"
     @phone_number = TextMessage.find_by_phone_number(cleaned_number)
     @phone_number.update_attributes(:verified => true)
+    head :ok
   end
 
 end
