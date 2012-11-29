@@ -7,7 +7,7 @@ class VerificationsController < ApplicationController
     # if cleaned_number.start_with? '1'
     #   cleaned_number[0] = ''
     # end
-    logger.debug "*** #{cleaned_number} ***"
+    logger.info "*** #{cleaned_number} ***"
     @phone_number = TextMessage.find_by_phone_number(cleaned_number)
     @phone_number.update_attributes(:verified => true)
   end
