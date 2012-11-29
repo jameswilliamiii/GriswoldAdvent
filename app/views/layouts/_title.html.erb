@@ -1,0 +1,14 @@
+<div class='row-fluid'>
+	<div class='span6 griswold effect'>
+		<h1>The Griswold Advent</h1>
+	</div>
+	<div class='span6'>
+		<div class='sign-up'>
+			<p>Get Daily Quotes By SMS</p>
+			<%= form_tag text_messages_path , :method => "post", :class => 'form-inline' do %>
+				<%= text_field :text_message, :phone_number, :placeholder => 'Enter US Phone Number' %>
+				<%= submit_tag("Submit", :class => 'btn') %>
+			<% end %>
+		</div>
+	</div>
+</div>

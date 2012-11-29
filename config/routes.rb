@@ -3,6 +3,8 @@ GriswoldAdvent::Application.routes.draw do
   root :to => 'daily_quotes#index'
   resources :daily_quotes, :except => [ :new ]
   get 'coming_soon' => 'daily_quotes#coming_soon', :as => :coming_soon
+  
+  post 'text_messages' => 'text_messages#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

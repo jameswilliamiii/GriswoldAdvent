@@ -11,13 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127055619) do
+ActiveRecord::Schema.define(:version => 20121129065837) do
 
   create_table "daily_quotes", :force => true do |t|
     t.integer  "show_date"
     t.text     "quote"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "text_messages", :force => true do |t|
+    t.string   "phone_number"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

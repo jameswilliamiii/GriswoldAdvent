@@ -23,11 +23,30 @@
 		background-color: black;
 		height: 100%;
 	}
+	
+	.sign-up {
+		font-family: 'Abel', sans-serif;
+		color: white;
+		font-size: 18px;
+		line-height: 28px;
+		margin-top: 10px;
+		text-align: right;
+		font-weight: bold;
+	}
 }
 
 @media (max-width: 767px) {
 	body {
 		background-color: black;;
+	}
+	
+	.sign-up {
+		font-family: 'Abel', sans-serif;
+		color: white;
+		font-size: 18px;
+		line-height: 28px;
+		margin-top: 10px;
+		font-weight: bold;
 	}
 }
 
@@ -41,12 +60,16 @@ span {
 	color: white;
 }
 
+.alert {
+	margin-top: 15px;
+}
+
 .griswold {
 	font-family: 'Lobster', sans-serif;
 	color: white;
 	font-size: 45px;
 	line-height: 75px;
-	font-weight: bold;
+
 }
 
 .quotes {
