@@ -3,7 +3,6 @@ class TextMessagesController < ApplicationController
   def create
     text_message = TextMessage.new params[:text_message]
     if text_message.save
-      
       client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILO_TOKEN'])
       client.account.sms.messages.create(
         from: ENV['TWILO_FROM'],
