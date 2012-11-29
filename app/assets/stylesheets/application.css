@@ -41,6 +41,14 @@ span {
 	color: white;
 }
 
+.griswold {
+	font-family: 'Lobster', sans-serif;
+	color: white;
+	font-size: 45px;
+	line-height: 75px;
+	font-weight: bold;
+}
+
 .quotes {
 	font-size: 35px;
 	line-height: 55px;

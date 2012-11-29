@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
+	<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 	<script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -26,31 +27,10 @@
 	<div id="wrap">
 		<div class='container'>
 			<%= yield %>
-			
 		</div>
 		<div id="push"></div>
 	</div>
-	<div id="footer">
-	  <div class="container">
-			<div class='row-fluid'>
-				<div class='span12'>
-					<% if @quotes.present? %>
-						<span class= 'past-dates'>
-							<strong>Previous quotes: <br/></strong>|
-							<% @quotes.each do |quote| %> 
-								<%= link_to quote.show_date, daily_quote_path(quote) %> |
-							<% end %>
-						</span>
-					<% end %>
-				</div>
-			</div>
-			<div class='row-fluid'>
-				<p class="muted credit credit">Built because I needed a daily laugh during the holidays, and thought you could use one too. Follow me on Twitter
-					<a href="http://twitter.com/jameswilliamiii">@jameswilliamiii</a>.
-				</p>
-			</div>
-	  </div>
-	</div>
+	<%= render 'layouts/footer' %>
 	
 </body>
 </html>
