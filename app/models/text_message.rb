@@ -6,7 +6,7 @@ class TextMessage < ActiveRecord::Base
   
   
   def clean_number
-    self.phone_number = self.phone_number.gsub(/\D/, "").to_i if phone_number.is_a?(String)
+    self.phone_number = self.phone_number.gsub(/\D/, "") if phone_number.is_a?(String)
     if self.phone_number.start_with? '1'
       self.phone_number[0] = ''
     end
