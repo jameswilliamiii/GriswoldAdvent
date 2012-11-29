@@ -3,7 +3,8 @@ class VerificationsController < ApplicationController
   before_filter :get_user
   
   def create
-    @phone_number.update_attributes(:verified => true)
+    @phone_number.verified = true
+    @phone_number.save
     head :ok
   end
   
