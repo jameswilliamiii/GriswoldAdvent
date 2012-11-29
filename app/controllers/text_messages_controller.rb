@@ -5,7 +5,7 @@ class TextMessagesController < ApplicationController
     if text_message.save
       redirect_to root_path, notice: 'You will now receive daily texts.'
     else
-      redirect_to root_path, alert: 'Something went wrong. Please try again.'
+      redirect_to root_path, alert: 'Something went wrong. Please make sure you are entering at least 10 digits.'
     end
   end
 

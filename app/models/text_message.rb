@@ -2,7 +2,7 @@ class TextMessage < ActiveRecord::Base
   attr_accessible :phone_number
   
   before_validation :clean_number
-  validates :phone_number, :presence => true
+  validates :phone_number, :presence => true, :length => { :minimum => 10 }
   
   
   def clean_number
