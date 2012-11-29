@@ -3,6 +3,7 @@ class VerificationsController < ApplicationController
   before_filter :get_user
   
   def create
+    logger.info "*** #{@phone_number.phone_number} ***"
     @phone_number.verified = true
     @phone_number.save
     head :ok
@@ -16,7 +17,6 @@ class VerificationsController < ApplicationController
       cleaned_number[0] = ''
       return cleaned_number
     end
-    logger.info "*** #{cleaned_number} ***"
     unless @phone_number = TextMessage.find_by_phone_number(cleaned_number)
       head :not_found
     end
