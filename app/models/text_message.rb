@@ -15,21 +15,24 @@ class TextMessage < ActiveRecord::Base
   end
   
   def self.daily_texts
-    if Date.today.month == 11 && Date.today.day == 29
+    month = Date.today.month
+    day = Date.today.day
+    if month == 11 && (1..29).include?(day)
       users = TextMessage.where :verified => true
       daily_quote = DailyQuote.find_by_show_date 1
       clean_quote = Sanitize.clean(daily_quote.quote)
-      if clean_quote.length > 77
-        clean_quote = clean_quote.slice(0..74) + "..."
+      if clean_quote.length > 107
+        clean_quote = clean_quote.slice(0..107) + "..."
+      end
       users.each do |user|
         client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILO_TOKEN'])
         client.account.sms.messages.create(
           from: ENV['TWILO_FROM'],
           to: user.phone_number,
-          body: "#{clean_quote.slice(0..77)} http://griswoldadvent.com/daily_quotes/#{daily_quote.id} - To STOP to discontinue.".html_safe
+          body: "#{clean_quote} #{daily_quote.short_link} - Reply STOP to discontinue."
           )
       end
     end
+      
   end
 end
-http://bit.ly/U5Gs6E
