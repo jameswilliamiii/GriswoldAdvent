@@ -1,6 +1,6 @@
 class VerificationsController < ApplicationController
   # protect_from_forgery :except => ["create"]
-  before_filter [ :get_user, :]
+  before_filter :get_user
   
   def create
     @phone_number.verified = true
