@@ -61,7 +61,7 @@ class DailyQuotesController < ApplicationController
   def check_date
     month = Date.today.month
     day = Date.today.day
-    unless month == 12 && (1..29).include?(day)
+    unless month == 11 && (1..29).include?(day)
       redirect_to coming_soon_path
     end
   end
