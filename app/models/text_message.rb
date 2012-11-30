@@ -36,7 +36,3 @@ class TextMessage < ActiveRecord::Base
       
   end
 end
-
-17344971582
-18166749888
-13123426407
