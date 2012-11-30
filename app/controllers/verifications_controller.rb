@@ -3,6 +3,7 @@ class VerificationsController < ApplicationController
   before_filter :get_user
   
   def create
+    @phone_number.destroy if message_from_twilio.downcase == 'stop'
     @phone_number.verified = true
     @phone_number.save
     head :ok
@@ -18,6 +19,5 @@ class VerificationsController < ApplicationController
     message_from_twilio = params['Body']
     cleaned_number = number_from_twilio.gsub(/\D/, "")
     @phone_number = TextMessage.find_by_phone_number(cleaned_number)
-    @phone_number.destroy if message_from_twilio.downcase == 'stop'
   end
 end
