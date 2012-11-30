@@ -17,9 +17,9 @@ class TextMessage < ActiveRecord::Base
   def self.daily_texts
     month = Date.today.month
     day = Date.today.day
-    if month == 11 && (1..30).include?(day)
+    if month == 12 && (1..25).include?(day)
       users = TextMessage.where :verified => true
-      daily_quote = DailyQuote.find_by_show_date 1
+      daily_quote = DailyQuote.find_by_show_date(day)
       clean_quote = Sanitize.clean(daily_quote.quote)
       if clean_quote.length > 107
         clean_quote = clean_quote.slice(0..107) + "..."
@@ -36,3 +36,7 @@ class TextMessage < ActiveRecord::Base
       
   end
 end
+
+17344971582
+18166749888
+13123426407
