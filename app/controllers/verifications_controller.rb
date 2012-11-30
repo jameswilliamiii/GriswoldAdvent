@@ -23,9 +23,15 @@ class VerificationsController < ApplicationController
       head :ok
     else
       phone_number = TextMessage.find_by_phone_number(cleaned_number)
-      phone_number.verified = true
-      phone_number.save
-      head :ok
+      if phone_number.present?
+        phone_number.verified = true
+        phone_number.save
+        head :ok
+      else
+        text_message = TextMessage.new
+        text_message.phone_number = cleaned_number
+        text_message.save
+      end
     end
   end
   
