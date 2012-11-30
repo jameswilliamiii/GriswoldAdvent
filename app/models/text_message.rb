@@ -17,7 +17,7 @@ class TextMessage < ActiveRecord::Base
   def self.daily_texts
     month = Date.today.month
     day = Date.today.day
-    if month == 11 && (1..29).include?(day)
+    if month == 11 && (1..30).include?(day)
       users = TextMessage.where :verified => true
       daily_quote = DailyQuote.find_by_show_date 1
       clean_quote = Sanitize.clean(daily_quote.quote)
