@@ -2,6 +2,9 @@
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <title>Griswold Advent <%= 'Dec' if Date.today.month == 12 %> <%= Date.today.day if Date.today.month == 12 %></title>
+	<!--[if lt IE 9]>
+	<script src="dist/html5shiv.js"></script>
+	<![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
