@@ -30,7 +30,9 @@ class VerificationsController < ApplicationController
       else
         text_message = TextMessage.new
         text_message.phone_number = cleaned_number
+        text_message.verified = true
         text_message.save
+        head :ok
       end
     end
   end
