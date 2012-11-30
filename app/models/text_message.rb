@@ -14,4 +14,19 @@ class TextMessage < ActiveRecord::Base
     end
   end
   
+  def self.daily_texts
+    if Date.today.month == 11 && Date.today.day == 29
+      users = TextMessage.where :verified => true
+      daily_quote = DailyQuote.find_by_show_date 1
+      users.each do |user|
+        client = Twilio::REST::Client.new(ENV['TWILIO_SID'], ENV['TWILO_TOKEN'])
+        client.account.sms.messages.create(
+          from: ENV['TWILO_FROM'],
+          to: user.phone_number,
+          body: "#{daily_quote.quote}"
+          )
+      end
+    end
+  end
+  
 end
