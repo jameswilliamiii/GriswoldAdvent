@@ -72,6 +72,10 @@ span {
 
 }
 
+a.title:hover {
+	text-decoration: none;
+}
+
 .quotes {
 	font-size: 35px;
 	line-height: 55px;
