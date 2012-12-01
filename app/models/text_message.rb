@@ -33,6 +33,13 @@ class TextMessage < ActiveRecord::Base
           )
       end
     end
-      
   end
+  
+  def self.list_numbers
+    numbers = TextMessage.where :verified => true
+    numbers.each do |number|
+      number.phone_number
+    end
+  end
+  
 end
