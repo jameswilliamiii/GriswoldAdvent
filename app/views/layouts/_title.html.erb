@@ -1,8 +1,10 @@
 <div class='row-fluid'>
-	<div class='span6 griswold effect'>
-		<h1><%= link_to "The Griswold Advent", root_path, :class => 'title' %></h1>
+	<div class='span8 griswold effect'>
+		<h1><%= link_to "The Griswold Advent", root_path, :class => 'title' %>
+		<a href="https://twitter.com/GriswoldAdvent" class="twitter-follow-button" data-show-count="false">Follow @GriswoldAdvent</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></h1>
 	</div>
-	<div class='span6'>
+	<div class='span4'>
 		<div class='sign-up'>
 			<p>Get Daily Quotes By SMS</p>
 			<%= form_tag text_messages_path , :method => "post", :class => 'form-inline' do %>
