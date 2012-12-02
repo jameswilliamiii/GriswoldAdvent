@@ -157,5 +157,16 @@ body {
 	color: white;
 }
 
+a.signout {
+	color: yellow;
+}
+
+.admin {
+	font-family: 'Abel', sans-serif;
+	background: rgba(105, 93, 93, .5);
+	padding: 20px;
+	margin: 20px;
+}
+
 
 

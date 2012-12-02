@@ -1,0 +1,14 @@
+<div class='row-fluid'>
+	<div class='span12'>
+		<div class='admin'>
+			<h2><%= link_to "Sign Out", signout_path, :method => 'delete', :class => 'signout' %></h2>
+			<h3>Total number of people signed up: <%= @text_messages.count %></h3>
+			<h3>Total number of people verified: <%= @text_messages_verified.count %></h3>
+			<h3>Verified Numbers:</h3>
+			<% @text_messages_verified.each do |t| %>
+				<h4>ID: <%= t.id %> -- Number: <%= t.phone_number %><br/></h4>
+			<% end %>
+		</div>
+	</div>
+</div>
+
