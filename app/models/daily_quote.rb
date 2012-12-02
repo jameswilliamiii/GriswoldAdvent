@@ -35,4 +35,16 @@ class DailyQuote < ActiveRecord::Base
       quote.save
     end
   end
+  
+  def self.daily_tweet
+    month = Date.today.month
+    day = Date.today.day
+    if month == 12 && (1..25).include?(day)
+      daily_quote = DailyQuote.find_by_show_date(day)
+      clean_quote = Sanitize.clean(daily_quote.quote)
+      clean_quote = clean_quote.slice(0..119) + "..." if clean_quote.length > 119
+      Twitter.update "#{clean_quote} #{daily_quote.short_link}"
+    end
+  end
+  
 end
