@@ -21,8 +21,12 @@ class VerificationsController < ApplicationController
         text_message.save
         head :ok
       end
-      respond_to do |format|
-        format.xml {render 'process_sms.xml.erb', :content_type => 'text/xml'}
+      twiml = Twilio::TwiML::Response.new do |r|
+        r.Sms "Thanks for verifying your account.  You can send STOP to this number to be removed at any time."
+      end
+      twiml.text
+      # respond_to do |format|
+      #         format.xml {render 'process_sms.xml.erb', :content_type => 'text/xml'}
       end
     end
   end
