@@ -27,7 +27,7 @@ class VerificationsController < ApplicationController
       twiml.text
       # respond_to do |format|
       #         format.xml {render 'process_sms.xml.erb', :content_type => 'text/xml'}
-      end
+      # end
     end
   end
 end
