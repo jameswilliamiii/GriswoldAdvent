@@ -21,7 +21,9 @@ class VerificationsController < ApplicationController
         text_message.save
         head :ok
       end
-      render 'process_sms.xml.erb', :content_type => 'text/xml'
+      respond_to do |format|
+        format.xml {render 'process_sms.xml.erb', :content_type => 'text/xml'}
+      end
     end
   end
 end
