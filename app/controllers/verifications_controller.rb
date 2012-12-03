@@ -22,5 +22,6 @@ class VerificationsController < ApplicationController
         head :ok
       end
     end
+    render 'verified.xml.erb', :content_type => 'text/xml'
   end
 end
