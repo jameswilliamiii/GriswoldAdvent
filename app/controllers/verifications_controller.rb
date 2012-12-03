@@ -21,6 +21,9 @@ class VerificationsController < ApplicationController
         text_message.save
         head :ok
       end
+      respond_to do |format|
+        format.xml
+      end
     end
   end
 end
