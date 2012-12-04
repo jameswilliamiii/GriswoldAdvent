@@ -3,6 +3,6 @@ class AdminController < ApplicationController
   
   def index
     @text_messages_count = TextMessage.count
-    @text_messages_verified = TextMessage.where(:verified => true).order(:created_at)
+    @text_messages_verified = TextMessage.order(:created_at).where(:verified => true)
   end
 end
