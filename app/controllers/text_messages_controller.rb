@@ -1,5 +1,8 @@
 class TextMessagesController < ApplicationController
   
+  around_filter :catch_twilio_error
+  
+  
   def create
     text_message = TextMessage.new params[:text_message]
     if text_message.save
@@ -15,7 +18,7 @@ class TextMessagesController < ApplicationController
     end
   end
   
-  def catch_not_found
+  def catch_twilio_error
     yield
     rescue Twilio::REST::RequestError
       redirect_to root_path, alert: "You may have signed up and stopped our service previously.  Please text START to (779) 545-2621"
