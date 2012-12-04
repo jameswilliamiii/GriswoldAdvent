@@ -7,6 +7,7 @@ class VerificationsController < ApplicationController
     if message_from_twilio.downcase == 'stop'
       phone_number = TextMessage.find_by_phone_number(cleaned_number)
       phone_number.destroy
+      render 'stop.xml.erb', :content_type => 'text/xml'
     else
       phone_number = TextMessage.find_by_phone_number(cleaned_number)
       if phone_number.present?
@@ -18,7 +19,7 @@ class VerificationsController < ApplicationController
         text_message.verified = true
         text_message.save
       end
+      render 'verified.xml.erb', :content_type => 'text/xml'
     end
-    render 'verified.xml.erb', :content_type => 'text/xml'
   end
 end
