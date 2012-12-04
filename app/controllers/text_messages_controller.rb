@@ -14,5 +14,11 @@ class TextMessagesController < ApplicationController
       redirect_to root_path, alert: 'Something went wrong. Please make sure you are entering a valid 10 digit phone number.'
     end
   end
+  
+  def catch_not_found
+    yield
+    rescue Twilio::REST::RequestError
+      redirect_to root_path, alert: "You may have signed up and stopped our service previously.  Please text START to (779) 545-2621"
+  end
 
 end
