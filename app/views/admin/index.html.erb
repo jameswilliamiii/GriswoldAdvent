@@ -6,7 +6,7 @@
 			<h3>Total number of people verified: <%= @text_messages_verified.count %></h3>
 			<h3>Verified Numbers:</h3>
 			<% @text_messages_verified.each do |t| %>
-				<h4>ID: <%= t.id %> -- Number: <%= t.phone_number %><br/></h4>
+				<h4>ID: <%= t.id %> -- Number: <%= t.phone_number %> -- Created at: <%= t.created_at.strftime('%D') %> -- Verified: <%= t.verified %><br/></h4>
 			<% end %>
 		</div>
 	</div>
