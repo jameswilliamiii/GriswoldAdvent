@@ -2,10 +2,10 @@
 	<div class='span12'>
 		<div class='admin'>
 			<h2><%= link_to "Sign Out", signout_path, :method => 'delete', :class => 'signout' %></h2>
-			<h3>Total number of people signed up: <%= @text_messages_count %></h3>
-			<h3>Total number of people verified: <%= @text_messages_verified.count %></h3>
+			<h3>Total number of people signed up: <%= @text_messages.count %></h3>
+			<h3>Total number of people verified: <%= @text_messages.where(verified: true).count %></h3>
 			<h3>Verified Numbers:</h3>
-			<% @text_messages_verified.each do |t| %>
+			<% @text_messages.each do |t| %>
 				<h4>ID: <%= t.id %> -- Number: <%= t.phone_number %> -- Created at: <%= t.created_at.strftime('%D') %> -- Verified: <%= t.verified %><br/></h4>
 			<% end %>
 		</div>
