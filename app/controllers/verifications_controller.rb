@@ -1,8 +1,8 @@
 class VerificationsController < ApplicationController
-  
+
   def incoming_text
     number_from_twilio = params['From']
-    message_from_twilio = params['Body']
+    message_from_twilio = params['Body'].downcase
     cleaned_number = number_from_twilio.gsub(/\D/, "")
     if message_from_twilio.downcase == 'stop'
       phone_number = TextMessage.find_by_phone_number(cleaned_number)
