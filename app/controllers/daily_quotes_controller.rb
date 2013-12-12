@@ -2,21 +2,21 @@ class DailyQuotesController < ApplicationController
 
   before_filter :check_date, :except => :coming_soon
   around_filter :catch_not_found
-  
+
   # Add google + button
   # fix facebook button
-  
+
   def index
     todays_date = Date.today.day
     if todays_date > 25
-      @quotes = DailyQuote.where( :show_date => 1..25)
+      @quotes = DailyQuote.where( :show_date => 1..25).order('show_date ASC')
       @daily_quote = @quotes.where(:show_date => 25).first
     else
-      @quotes = DailyQuote.where( :show_date => 1..todays_date)
+      @quotes = DailyQuote.where( :show_date => 1..todays_date).order('show_date ASC')
       @daily_quote = @quotes.where(:show_date => todays_date).first
     end
   end
-  
+
   def show
     todays_date = Date.today.day
     if todays_date > 25
@@ -51,13 +51,13 @@ class DailyQuotesController < ApplicationController
     @daily_quote.destroy
     redirect_to daily_quotes_url
   end
-  
+
   def coming_soon
 
   end
-  
+
   private
-  
+
   def check_date
     month = Date.today.month
     day = Date.today.day
@@ -65,5 +65,5 @@ class DailyQuotesController < ApplicationController
       redirect_to coming_soon_path
     end
   end
-  
+
 end
